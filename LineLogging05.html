@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>LinearLineWeb_a20220306</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/DarkTheme.css">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://jspreadsheet.com/v8/jspreadsheet.css">
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css">
+    <link rel="stylesheet" href="assets/css/NavCustomStyle.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/ScrollBar.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="font-family: 'Didact Gothic', sans-serif;">
+    <nav class="navbar navbar-light navbar-expand-lg mb-3 shadow nav-bar-top" style="padding-left: 0px;">
+        <div class="container-fluid">
+            <div class="sidebar-brand-text mx-3">
+                <h4 class="text-center text-light m-0" style="font-weight: bold;">Linear Line 9</h4>
+            </div>
+            <div class="sidebar-brand-text mx-3"></div><button data-toggle="collapse" class="navbar-toggler bg-primary" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse d-xl-flex justify-content-lg-end justify-content-xl-end p-1" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item text-light d-xl-flex align-items-xl-center">
+                        <h4 class="text-center m-0" style="font-weight: bold;">Logging</h4>
+                    </li>
+                    <li class="nav-item d-xl-flex align-items-xl-center mx-3 border-right"></li>
+                    <li class="nav-item d-xl-flex align-items-xl-center"><a class="btn btn-primary ml-1" role="button" href="LineMenu.html"><i class="fa fa-th"></i></a></li>
+                    <li class="nav-item d-xl-flex align-items-xl-center mx-3 border-right"></li>
+                    <li class="nav-item d-xl-flex align-items-xl-center">
+                        <div class="nav-item dropdown bg-primary border-light shadow-sm p-2 rounded"><a class="dropdown-toggle active text-light" aria-expanded="false" data-toggle="dropdown" href="#">Logging Select</a>
+                            <div class="dropdown-menu"><a class="dropdown-item active" href="LineLogging01.html">Day Summary</a><a class="dropdown-item" href="LineLogging02.html">Defect Summary</a><a class="dropdown-item" href="LineLogging03.html">Weight Tablet OK NG Log</a><a class="dropdown-item" href="LineLogging04.html">Thickness OK NG Log</a><a class="dropdown-item" href="LineLogging05.html">Weight Insulator NG Log</a><a class="dropdown-item" href="LineLogging06.html">Weight Lining NG Log</a></div>
+                        </div>
+                    </li>
+                    <li class="nav-item d-xl-flex align-items-xl-center mx-3 border-right"></li>
+                </ul><input type="text" id="currentDateTime" class="rounded border-0" readonly="" disabled="" style="margin-top: 0px;background: rgba(255,255,255,0);color: var(--light);">
+            </div>
+        </div>
+    </nav>
+    <div id="contentWrapper">
+        <div id="content" style="font-size: 0.95em;min-height: 85vh;">
+            <div class="container-fluid">
+                <div id="datasetting">
+                    <div class="card text-light mb-1 shadow">
+                        <div class="card-body p-1">
+                            <form>
+                                <div class="form-row justify-content-center">
+                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
+                                        <h4 class="text-center text-info m-0" style="font-weight: bold;">Weight Compound Insulator NG Log</h4>
+                                    </div>
+                                    <div class="col-auto d-xl-flex align-items-xl-center p-1">
+                                        <div class="input-group mx-2">
+                                            <div class="input-group-prepend"><span class="input-group-text">From</span></div><input class="form-control" type="date">
+                                            <div class="input-group-append"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto d-xl-flex align-items-xl-center p-1">
+                                        <div class="input-group mx-2">
+                                            <div class="input-group-prepend"><span class="input-group-text">To</span></div><input class="form-control" type="date">
+                                            <div class="input-group-append"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto d-xl-flex align-items-xl-center"><button class="btn btn-primary mx-2" type="submit" style="width: 5em;">Load</button></div>
+                                    <div class="col-auto d-xl-flex align-items-xl-center"><button class="btn btn-primary mx-2" type="submit"><i class="fa fa-sign-out mr-2"></i>Export</button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <section>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="card shadow mb-2" style="height: 80vh;">
+                                <div class="card-body">
+                                    <div class="table-responsive" style="height: 100%;">
+                                        <table class="table table-striped table-dark table-sm">
+                                            <thead class="thead-light text-primary" style="position: sticky;top: 0;">
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Machine Name</th>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>Lower SV -</th>
+                                                    <th>Lower SV</th>
+                                                    <th>Lower SV +</th>
+                                                    <th><strong>Lower PV</strong><br></th>
+                                                    <th>Lower Time</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>LINEARLINE09</td>
+                                                    <td>2021-11-23</td>
+                                                    <td>&nbsp;10:10:00</td>
+                                                    <td>123</td>
+                                                    <td>0</td>
+                                                    <td>491</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>LINEARLINE09</td>
+                                                    <td>2021-11-23</td>
+                                                    <td>&nbsp;10:10:00</td>
+                                                    <td>123</td>
+                                                    <td>0</td>
+                                                    <td>491</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>LINEARLINE09</td>
+                                                    <td>2021-11-23</td>
+                                                    <td>&nbsp;10:10:00</td>
+                                                    <td>123</td>
+                                                    <td>0</td>
+                                                    <td>491</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>LINEARLINE09</td>
+                                                    <td>2021-11-23</td>
+                                                    <td>&nbsp;10:10:00</td>
+                                                    <td>123</td>
+                                                    <td>0</td>
+                                                    <td>491</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>LINEARLINE09</td>
+                                                    <td>2021-11-23</td>
+                                                    <td>&nbsp;10:10:00</td>
+                                                    <td>123</td>
+                                                    <td>0</td>
+                                                    <td>491</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>LINEARLINE09</td>
+                                                    <td>2021-11-23</td>
+                                                    <td>&nbsp;10:10:00</td>
+                                                    <td>123</td>
+                                                    <td>0</td>
+                                                    <td>491</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>LINEARLINE09</td>
+                                                    <td>2021-11-23</td>
+                                                    <td>&nbsp;10:10:00</td>
+                                                    <td>123</td>
+                                                    <td>0</td>
+                                                    <td>491</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer class="bg-white sticky-footer mt-4">
+            <div class="container my-auto">
+                <div class="text-center my-auto copyright"></div>
+            </div>
+        </footer><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/BarChartConfig.js"></script>
+    <script src="assets/js/DateTime.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="https://jsuites.net/v4/jsuites.js"></script>
+    <script src="assets/js/Imgpreview.js"></script>
+    <script src="assets/js/sortTable.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
